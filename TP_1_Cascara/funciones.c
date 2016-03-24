@@ -55,20 +55,16 @@ void multiplicacion(int x, int y)
     multiplicacion=x*y;
     printf("La multiplicacion es: %d\n", multiplicacion);
 }
-/** \brief recibe un número y calcula su factorial
+/** \brief recibe un número y calcula su factorial usando recursividad
  *
- * \param x número sobre el que se quiere calcular el factorial
- * \param i variable de control
- * \param factorial guarda el resultado de la multiplicacion
- *
+ * \return la 1er sentencia inicia la recursividad multiplicando x por la propia funcion de x-1 hasta que x valga 1
+ * \return la 2da sentencia al devolver 1 a la funcion, inicia el camino inverso de la anterior, devolviendo asi los valores para resolver todos los calculos de x * factorial(x-1)
  */
-void factorial(int x)
+int factorial(int x)
 {
-    int i=1;
-    int factorial=1;
-    for(i;i<=x;i++)
+    if(x>1)
     {
-        factorial=factorial*i;
+        return x * factorial(x-1);
     }
-    printf("El factorial de %d es: %d\n",x,factorial);
+    return 1;
 }

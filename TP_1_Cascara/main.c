@@ -8,6 +8,7 @@ int main()
     int opcion=0;
     int x=0;
     int y=0;
+    long int factorialFinal;
 
     while(seguir=='s')
     {
@@ -60,7 +61,8 @@ int main()
                     break;
                 case 7:
                     system("cls");
-                    factorial(x);
+                    factorialFinal=factorial(x);
+                    printf("El factorial de %d es: %ld\n",x,factorialFinal);
                     system("pause");
                     break;
                 case 8:
