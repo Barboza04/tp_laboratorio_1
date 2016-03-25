@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1458854930 source:d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\funciones.c
+1458859562 source:d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\funciones.c
 
-1458807872 source:d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\main.c
+1458857255 source:d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
 
-1458803445 d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\funciones.h
+1458854888 d:\mis documentos\mis cosas\programacion\worckspacec\tp_1_cascara\funciones.h
 

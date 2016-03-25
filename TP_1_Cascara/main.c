@@ -6,9 +6,9 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int x=0;
-    int y=0;
-    long int factorialFinal;
+    signed int x=0;
+    signed int y=0;
+    int factorialFinal;
 
     while(seguir=='s')
     {
@@ -29,15 +29,21 @@ int main()
             {
                 case 1:
                     system("cls");
-                    printf("Ingrese el 1er operando ");
-                    scanf("%d",&x);
+                    do
+                    {
+                        printf("Ingrese el 1er operando ");
+                        setbuf(stdin, NULL);
+                    } while(scanf("%d", &x) != 1);
                     system("pause");
                     break;
                 case 2:
                     system("cls");
-                    printf("Ingrese el 2do operando ");
-                    scanf("%d",&y);
-                   system("pause");
+                    do
+                    {
+                        printf("Ingrese el 2do operando ");
+                        setbuf(stdin, NULL);
+                    } while(scanf("%d", &y) != 1);
+                    system("pause");
                     break;
                 case 3:
                     system("cls");
@@ -62,7 +68,7 @@ int main()
                 case 7:
                     system("cls");
                     factorialFinal=factorial(x);
-                    printf("El factorial de %d es: %ld\n",x,factorialFinal);
+                    printf("El factorial de %d es: %d\n",x,factorialFinal);
                     system("pause");
                     break;
                 case 8:
