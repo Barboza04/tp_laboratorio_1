@@ -1,70 +1,123 @@
-/** \brief recibe dos números y los suma
+#include <stdio.h>
+#include <stdlib.h>
+
+/** \brief Recibe dos variables int, verifica que hayan sido ingresadas y las suma
  *
- * \param x primero número ingresado
- * \param y segundo número ingresado
- * \param suma guarda el resultado de la operacion
- *
- */
-void suma(int x, int y)
-{
-    int suma;
-    suma=x+y;
-    printf("La suma es: %d\n", suma);
-}
-/** \brief recibe dos números y los resta
- *
- * \param x primero número ingresado
- * \param y segundo número ingresado
- * \param resta guarda el resultado de la operacion
+ * \param x es la primer variable ingresada
+ * \param y es la segunda variable ingresada
+ * \param a es la variable de control del ingreso de la variable x
+ * \param b es la variable de control del ingreso de la variable y
+ * \param addition guarda el resultado de la operacion
  *
  */
-void resta(int x, int y)
+void addition(int x, int y, int a, int b)
 {
-    int resta;
-    resta=x-y;
-    printf("La resta es: %d\n", resta);
+    if(a&&b)
+    {
+        int addition;
+        addition=x+y;
+        printf("%d+%d = %d\n",x,y,addition);
+    }
+    else
+    {
+        if(a==0||b==0)
+        {
+            printf("Faltan operandos para realizar el calculo\n");
+        }
+    }
 }
-/** \brief recibe dos números y los divide
+/** \brief Recibe dos variables int, verifica que hayan sido ingresadas y las resta
  *
- * \param x primero número ingresado
- * \param y segundo número ingresado
+ * \param x es la primer variable ingresada
+ * \param y es la segunda variable ingresada
+ * \param a es la variable de control del ingreso de la variable x
+ * \param b es la variable de control del ingreso de la variable y
+ * \param subtraction guarda el resultado de la operacion
+ *
+ */
+void subtraction(int x, int y, int a, int b)
+{
+    if(a&&b)
+    {
+        int subtraction;
+        subtraction=x-y;
+        printf("%d-%d = %d\n",x,y,subtraction);
+    }
+    else
+    {
+        if(a==0||b==0)
+        {
+            printf("Faltan operandos realizar el calculo\n");
+        }
+    }
+}
+/** \brief Recibe dos variables int, verifica que hayan sido ingresadas y las divide
+ *
+ * \param x es la primer variable ingresada
+ * \param y es la segunda variable ingresada
+ * \param a es la variable de control del ingreso de la variable x
+ * \param b es la variable de control del ingreso de la variable y
  * \param division guarda el resultado de la operacion
  *
  */
-void division(int x, int y)
+void division(int x, int y, int a, int b)
 {
-    float division;
-    while(y==0)
+    if(a&&b)
     {
-        printf("No puede dividir por 0\nReingrese el 2do operando ");
-        scanf("%d", &y);
+        float division;
+        division=(float)x/y;
+        printf("%d/%d = %.2f\n",x,y,division);
     }
-    division=(float)x/y;
-    printf("La division es: %.2f\n", division);
+    else
+    {
+        if(a==0||b==0)
+        {
+            printf("Faltan operandos realizar el calculo\n");
+        }
+    }
 }
-/** \brief recibe dos números y los multiplica
+/** \brief Recibe dos variables int, verifica que hayan sido ingresadas y las multiplica
  *
- * \param x primero número ingresado
- * \param y segundo número ingresado
- * \param multiplicacion guarda el resultado de la operacion
+ * \param x es la primer variable ingresada
+ * \param y es la segunda variable ingresada
+ * \param a es la variable de control del ingreso de la variable x
+ * \param b es la variable de control del ingreso de la variable y
+ * \param multiplication guarda el resultado de la operacion
  *
  */
-void multiplicacion(int x, int y)
+void multiplication(int x, int y, int a, int b)
 {
-    int multiplicacion;
-    multiplicacion=x*y;
-    printf("La multiplicacion es: %d\n", multiplicacion);
+    if(a&&b)
+    {
+        int multiplication;
+        multiplication=x*y;
+        printf("%d*%d = %d\n",x, y,multiplication);
+    }
+    else
+    {
+        if(a==0||b==0)
+        {
+            printf("Faltan operandos realizar el calculo\n");
+        }
+    }
 }
-/** \brief recibe un número y calcula su factorial usando recursividad
+/** \brief Recibe una variable int, verifica que haya sido ingresada y calcula su factorial
  *
- * \return la 1er sentencia inicia la recursividad multiplicando x por la propia funcion de x-1 hasta que x valga 1
- * \return la 2da sentencia al devolver 1 a la funcion, inicia el camino inverso de la anterior, devolviendo asi los valores para resolver todos los calculos de x * factorial(x-1)
+ * \param x es la variable ingresada
+ * \param result guarda el resultado de la operacion
+ * \return retorna el producto del factoreo
+ *
  */
 int factorial(int x)
 {
+    int result;
     if(x>1)
     {
-        return x * factorial(x-1);
+        result=x*factorial(x-1);
     }
-    return 1;
+    else
+    {
+        result=1;
+    }
+    return result;
 }
