@@ -15,14 +15,18 @@
 int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLimit)
  {
      int value=-1;
-     int largo;
-     int scanfOK;
+     int length;
+     int i;
      char auxString[100];
      puts(message);
      setbuf(stdin,NULL);
-     scanfOK=scanf("%s",auxString);
-     largo=strlen(auxString);
-     if(scanfOK!=1&&(largo<lowLimit||largo>hiLimit))
+     scanf("%s",auxString);
+     length=strlen(auxString);
+     for(i=0;i<51;i++)
+     {
+
+     }
+     if((length<lowLimit||length>hiLimit))
      {
          puts(eMessage);
      }
