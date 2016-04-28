@@ -212,7 +212,7 @@ int printPersons(ePerson* pPerson, int length)
 {
     int i;
     int value=-1;
-    printf("\n\nName\t  \tAge\t \tDNI");
+    printf("\n\nName\t  \tAge\t \tDNI\n");
     if(pPerson!=NULL&&length>0)
     {
         for(i=0; i<length; i++)
