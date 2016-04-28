@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1461767912 source:d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\funciones.c
+1461866644 source:d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones.h"
 
-1461767936 d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\funciones.h
+1461866394 d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\funciones.h
 
 1460681488 source:d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1461763409 source:d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\main.c
+1461866677 source:d:\documentos\mis cosas\programacion\programacion 1 - laboratorio 1\tps\tp_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

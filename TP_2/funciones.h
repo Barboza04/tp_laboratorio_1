@@ -8,7 +8,7 @@ typedef struct
     char name[51];
     int age;
     int dni;
-    int status;
+    int isEmpty;
 
 }ePerson;
 int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLimit);

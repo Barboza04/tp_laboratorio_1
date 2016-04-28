@@ -27,7 +27,7 @@ int main()
     int counter35plus=0;
 
     initPersons(list,LENGTH);
-    auxList.status=0;
+    auxList.isEmpty=1;
 
     do
     {

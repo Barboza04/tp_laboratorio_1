@@ -9,7 +9,7 @@
  * \param eMessage Es el mensaje a ser mostrado en caso de error
  * \param lowLimit Longitud mìnima de la cadena
  * \param hiLimit Longitud màxima de la cadena
- * \return Si obtuvo la cadena [0] si no [-1]
+ * \return Si obtuvo la cadena retorna 0 si no -1
  *
  */
 int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLimit)
@@ -41,7 +41,7 @@ int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLim
  * \param eMessage2 Es el mensaje a ser mostrado en caso de que el dato este fuera del rango
  * \param lowLimit Limite inferior a validar
  * \param hiLimit Limite superior a validar
- * \return Si obtuvo el numero [0] si no [-1]
+ * \return Si obtuvo el numero retorna 0 si no -1
  *
  */
 int getInt(int* input,char message[],char eMessage1[],char eMessage2[],int lowLimit,int hiLimit)
@@ -67,7 +67,7 @@ int getInt(int* input,char message[],char eMessage1[],char eMessage2[],int lowLi
  }
 
 /** \brief  Para indicar que todas las posiciones del array estan vacias
- *           esta funcion inicializa el campo status en 0
+ *          esta funcion inicializa el campo isEmpty en 1
  * \param ePerson* pPerson Puntero al array de personas
  * \param int length Largo del array
  * \return int value devuelve -1 en caso de error [Largo invalido o puntero NULL] y 0 si no hay error
@@ -81,7 +81,7 @@ int initPersons(ePerson* pPerson, int length)
     {
         for(i=0;i<length;i++)
         {
-            pPerson[i].status=0;
+            pPerson[i].isEmpty=1;
         }
         value=0;
     }
@@ -106,13 +106,13 @@ int addPerson(ePerson* pPerson, int length, char name[], int age, int dni)
     {
         for(i=0;i<length;i++)
         {
-            if(pPerson[i].status==0)
+            if(pPerson[i].isEmpty)
             {
 
                 strcpy(pPerson[i].name,name);
                 pPerson[i].age=age;
                 pPerson[i].dni=dni;
-                pPerson[i].status=1;
+                pPerson[i].isEmpty=0;
                 value=0;
                 break;
             }
@@ -137,7 +137,7 @@ ePerson* findByDni(ePerson* pPerson, int length,int dni)
     {
         for(i=0;i<length;i++)
         {
-            if(pPerson[i].status!=0&&pPerson[i].dni==dni)
+            if(!pPerson[i].isEmpty&&pPerson[i].dni==dni)
             {
                 value=&pPerson[i];
                 break;
@@ -148,7 +148,7 @@ ePerson* findByDni(ePerson* pPerson, int length,int dni)
 }
 
 /** \brief Borra una persona de la lista por su dni
- *         (cambia el valor de la bandera status a 0)
+ *         (cambia el valor de la bandera isEmpty a 1)
  *
  * \param ePerson* pPerson Puntero al array de personas
  * \param int length Largo del array
@@ -163,7 +163,7 @@ int removePerson(ePerson* pPerson, int length, int dni)
     auxPerson=findByDni(pPerson,length,dni);
     if(auxPerson!=NULL)
     {
-        auxPerson->status=0;
+        auxPerson->isEmpty=1;
         value=0;
     }
     return value;
@@ -217,7 +217,7 @@ int printPersons(ePerson* pPerson, int length)
     {
         for(i=0; i<length; i++)
         {
-            if(pPerson[i].status==1)
+            if(!pPerson[i].isEmpty)
             {
                 printf("\n%s  \t%d\t \t%d\n\n",pPerson[i].name,pPerson[i].age,pPerson[i].dni);
             }
@@ -279,19 +279,19 @@ int getRanges(ePerson* pPerson, int length, int* x, int* y, int* z)
     {
         for(i=0;i<length;i++)
         {
-            if(pPerson[i].age<18&&pPerson[i].status!=0)
+            if(pPerson[i].age<18&&!pPerson[i].isEmpty)
             {
                 range1++;
                 *x=range1;
             }
             else
             {
-                if(pPerson[i].age>17&&pPerson[i].age<36&&pPerson[i].status!=0)
+                if(pPerson[i].age>17&&pPerson[i].age<36&&!pPerson[i].isEmpty)
                 {
                     range2++;
                     *y=range2;
                 }
-                else if(pPerson[i].age>35&&pPerson[i].status!=0)
+                else if(pPerson[i].age>35&&!pPerson[i].isEmpty)
                 {
                     range3++;
                     *z=range3;
