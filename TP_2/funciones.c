@@ -98,20 +98,20 @@ int initPersons(ePerson* pPerson, int length)
     return value;
 }
 
-/** \brief
+/** \brief Busca la primer posicion libre del array
  *
- * \param
- * \param
- * \return
+ * \param ePerson person Vector de personas donde busca el espacio libre
+ * \param int length largo del array
+ * \return int index devuelve -1 en caso de no encontrar una posicion libre y el indice de esa posicion en caso contrario
  *
  */
 
-int findEmpty(ePerson x[], int length)
+int findEmpty(ePerson person[], int length)
 {
     int index=-1,i;
     for(i=0;i<length;i++)
     {
-        if(x[i].isEmpty==-1)
+        if(person[i].isEmpty==-1)
         {
             index=i;
             break;

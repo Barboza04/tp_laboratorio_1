@@ -63,8 +63,15 @@ int main()
                 if(auxName!=-1&&auxAge!=-1&&auxDni!=-1)
                 {
                     index=findEmpty(list,LENGTH);
-                    addPerson(list,LENGTH,index,auxList.name,auxList.age,auxList.dni);
-                    puts("Persona agregada\n");
+                    if(index==-1)
+                    {
+                        puts("No hay lugares libres\n");
+                    }
+                    else
+                    {
+                        addPerson(list,LENGTH,index,auxList.name,auxList.age,auxList.dni);
+                        puts("Persona agregada\n");
+                    }
                 }
                 break;
             case 2:
