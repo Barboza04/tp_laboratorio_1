@@ -22,6 +22,7 @@ int main()
     ePerson auxList;
     int option=0;
     int auxName,auxAge,auxDni;
+    int index;
     int counter18less=0;
     int counter18_35=0;
     int counter35plus=0;
@@ -31,6 +32,8 @@ int main()
 
     do
     {
+        system("cls");
+        printf("\n*****************Lista*****************\n\n");
         printf("1- Agregar persona\n");
         printf("2- Borrar persona\n");
         printf("3- Imprimir lista ordenada por  nombre\n");
@@ -42,7 +45,7 @@ int main()
         switch(option)
         {
             case 1:
-                auxName=getString(auxList.name,"Ingrese nombre: ","El largo debe ser entre 2 y 50\n",2,50);
+                auxName=getString(auxList.name,"Ingrese nombre: ","Cadena invalida\n",2,50);
                 if(auxName!=0)
                 {
                     break;
@@ -59,7 +62,9 @@ int main()
                 }
                 if(auxName!=-1&&auxAge!=-1&&auxDni!=-1)
                 {
-                    addPerson(list,LENGTH,auxList.name,auxList.age,auxList.dni);
+                    index=findEmpty(list,LENGTH);
+                    addPerson(list,LENGTH,index,auxList.name,auxList.age,auxList.dni);
+                    puts("Persona agregada\n");
                 }
                 break;
             case 2:
@@ -71,6 +76,7 @@ int main()
                 else
                 {
                     removePerson(list,LENGTH,auxList.dni);
+                    puts("Persona borrada\n");
                 }
                 break;
             case 3:
@@ -84,6 +90,7 @@ int main()
             case 5:
                 break;
         }
+        system("pause");
     }while(option!=5);
 
     return 0;

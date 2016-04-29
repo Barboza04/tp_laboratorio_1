@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "funciones.h"
 
 /** \brief Solicita una cadena de caracteres al usuario y la valida
@@ -17,16 +18,21 @@ int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLim
      int value=-1;
      int length;
      int i;
+     int isLetter;
      char auxString[100];
      puts(message);
      setbuf(stdin,NULL);
-     scanf("%s",auxString);
+     gets(auxString);
      length=strlen(auxString);
-     for(i=0;i<51;i++)
+     for(i=0;i<length;i++)
      {
-
+         isLetter=isalpha(auxString[i]);
+         if(isLetter==0)
+         {
+             break;
+         }
      }
-     if((length<lowLimit||length>hiLimit))
+     if(isLetter==0||(length<lowLimit||length>hiLimit))
      {
          puts(eMessage);
      }
@@ -92,6 +98,28 @@ int initPersons(ePerson* pPerson, int length)
     return value;
 }
 
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+int findEmpty(ePerson x[], int length)
+{
+    int index=-1,i;
+    for(i=0;i<length;i++)
+    {
+        if(x[i].isEmpty==-1)
+        {
+            index=i;
+            break;
+        }
+    }
+    return index;
+}
+
 /** \brief Agrega en una lista de personas los valores recividos como parametros
  *
  * \param ePerson* pPerson Puntero al array de personas
@@ -102,24 +130,18 @@ int initPersons(ePerson* pPerson, int length)
  * \return int value devuelve -1 en caso de error [Largo invalido o puntero NULL] y 0 si no hay error
  *
  */
-int addPerson(ePerson* pPerson, int length, char name[], int age, int dni)
+int addPerson(ePerson* pPerson, int length, int index, char name[], int age, int dni)
 {
     int value=-1;
-    int i;
     if(pPerson!=NULL&&length>0)
     {
-        for(i=0;i<length;i++)
+        if(index!=-1)
         {
-            if(pPerson[i].isEmpty)
-            {
-
-                strcpy(pPerson[i].name,name);
-                pPerson[i].age=age;
-                pPerson[i].dni=dni;
-                pPerson[i].isEmpty=0;
-                value=0;
-                break;
-            }
+            strcpy(pPerson[index].name,name);
+            pPerson[index].age=age;
+            pPerson[index].dni=dni;
+            pPerson[index].isEmpty=0;
+            value=0;
         }
     }
     return value;

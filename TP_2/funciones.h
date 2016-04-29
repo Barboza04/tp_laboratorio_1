@@ -11,10 +11,12 @@ typedef struct
     int isEmpty;
 
 }ePerson;
+
 int getString(char* input,char message[],char eMessage[],int lowLimit, int hiLimit);
 int getInt(int* input,char message[],char eMessage1[],char eMessage2[],int lowLimit,int hiLimit);
 int initPersons(ePerson* pPerson, int length);
-int addPerson(ePerson* pPerson, int length, char name[], int age, int dni);
+int findEmpty(ePerson x[], int length);
+int addPerson(ePerson* pPerson, int length, int index, char name[], int age, int dni);
 ePerson* findByDni(ePerson* pPerson, int length,int id);
 int removePerson(ePerson* pPerson, int length, int dni);
 int sortPersonsByName(ePerson* pPerson, int length);
