@@ -124,6 +124,7 @@ int findEmpty(ePerson person[], int length)
  *
  * \param ePerson* pPerson Puntero al array de personas
  * \param int length Largo del array
+ * \param int index indice de la primer posicion libre
  * \param char name[] nombre de la persona a ingresar en la lista
  * \param int age edad de la persona a ingresar en la lista
  * \param int dni dni de la persona a ingresar en la lista
