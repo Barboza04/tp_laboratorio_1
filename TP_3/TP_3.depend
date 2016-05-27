@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1464320434 source:g:\tps\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib.h"
+
+1464320370 source:g:\tps\tp_3\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib.h"
+
+1464320370 g:\tps\tp_3\lib.h
+
