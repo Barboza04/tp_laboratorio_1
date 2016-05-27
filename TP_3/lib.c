@@ -205,11 +205,11 @@ int getAlNum(char* input,char message[],char eMessage1[],char eMessage2[],int lo
     return value;
 }
 
-/** \brief
+/** \brief Recibe una cadena de caracteres y convierte la primera letra de cada palabra en mayuscula
  *
- * \param
- * \param
- * \return
+ * \param str Puntero a la cadena
+ * \param cant Cantidad de caracteres de la cadena
+ * \return Devuelve 0 si formateo la cadena y -1 si no pudo
  *
  */
 
@@ -259,11 +259,11 @@ int initBillboard(eMovie* pList, int length)
     return value;
 }
 
-/** \brief
+/** \brief Muestra el menu de opciones y llama a las funciones segun la opcion elegida
  *
- * \param
- * \param
- * \return
+ * \param pList Puntero al vector de peliculas
+ * \param length Longitud del vector
+ * \return void
  *
  */
 void menu(eMovie *pList,int length)
@@ -278,11 +278,10 @@ void menu(eMovie *pList,int length)
         "2- Modificar pelicula\n"
         "3- Borrar pelicula\n"
         "4- Generar pagina web\n"
-        "5- Mostrar peliculas\n"
-        "6- Salir\n"
+        "5- Salir\n"
         "\n**************************************\n\n");
 
-        getInt(&option,"Elija una opcion: ","Opcion invalida, solo debe ingresar numeros","Opcion invalida, debe estar entre 1 y 6",1,6);
+        getInt(&option,"Elija una opcion: ","Opcion invalida, solo debe ingresar numeros","Opcion invalida, debe estar entre 1 y 5",1,5);
 
         switch(option)
         {
@@ -299,13 +298,10 @@ void menu(eMovie *pList,int length)
             generatePage(pList,length);
             break;
         case 5:
-            showBillboard(pList,length);
-            break;
-        case 6:
             saveBinary(pList,length);
             break;
         }
-    }while(option!=6);
+    }while(option!=5);
 }
 
 /** \brief Busca la primer posicion libre del vector de ppeliculas
@@ -385,40 +381,6 @@ void readrBinary(eMovie *pList,int length)
 	system("pause");
 
 	fclose(f);
-}
-
-/** \brief Imprime las peliculas del vector recibido
- *
- * \param pList Puntero al vector de peliculas
- * \param length Longitud del vector
- * \return void
- *
- */
-void showBillboard(eMovie *pList,int length)
-{
-	int i;
-	if(pList!=NULL&&length>0)
-    {
-        if(movieCounter(pList,length))
-        {
-            for(i=0;i<length;i++)
-            {
-                if(!pList[i].isEmpty)
-                {
-                    printf("\nTitulo: %s\n"
-                    "Genero: %s\n"
-                    "Duracion: %s\n"
-                    "Descripcion: %s\n"
-                    "Puntaje: %d\n",pList[i].title,pList[i].genre,pList[i].duration,pList[i].description,pList[i].points);
-                }
-            }
-        }
-        else
-        {
-            printf("No hay peliculas registradas\n");
-        }
-    }
-	system("pause");
 }
 
 /** \brief Verifica si esta registrada la pelicula recibida por parametro
@@ -785,11 +747,10 @@ int movieCounter(eMovie *pList,int length)
     return movies;
 }
 
-/** \brief
+/** \brief Carga datos de tres estructuras para prueba de funciones
  *
- * \param
- * \param
- * \return
+ * \param pList Puntero al vector de peliculas
+ * \return void
  *
  */
 

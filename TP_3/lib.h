@@ -24,7 +24,6 @@ int getNumberString(char* input,char message[],char eMessage1[],char eMessage2[]
 int initBillboard(eMovie* pList, int length);
 void saveBinary(eMovie *pList,int length);
 void readrBinary(eMovie *pList,int length);
-void showBillboard(eMovie *pList,int length);
 void menu(eMovie *pList,int length);
 int findEmpty(eMovie *pList,int length);
 int checkByString(eMovie* pList,int length,char title[]);
