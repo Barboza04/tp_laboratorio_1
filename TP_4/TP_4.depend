@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1466124144 source:f:\tps\tp_4\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"lib.h"
+
+1466124166 f:\tps\tp_4\employee.h
+	"ArrayList.h"
+
+1463521274 f:\tps\tp_4\arraylist.h
+
+1466123392 source:f:\tps\tp_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1466112540 source:f:\tps\tp_4\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1466124276 f:\tps\tp_4\lib.h
+	"ArrayList.h"
+	"Employee.h"
+
+1466700308 source:h:\tps\tp_4\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1463521274 h:\tps\tp_4\arraylist.h
+
+1466705298 source:h:\tps\tp_4\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"lib.h"
+
+1466705298 h:\tps\tp_4\employee.h
+	"ArrayList.h"
+
+1466705352 h:\tps\tp_4\lib.h
+	"ArrayList.h"
+	"Employee.h"
+
+1466705318 source:h:\tps\tp_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"lib.h"
+	"Employee.h"
+
+1466705302 source:h:\tps\tp_4\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib.h"
+
