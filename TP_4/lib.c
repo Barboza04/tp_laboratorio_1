@@ -354,6 +354,7 @@ void menu(ArrayList* pList,ArrayList* pBackupList)
                 break;
             case 9:
                 saveBinary(pList);
+                saveBackUpBinary(pBackupList);
                 break;
             case 0:
                 exit(0);
